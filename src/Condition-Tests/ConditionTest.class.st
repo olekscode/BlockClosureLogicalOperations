@@ -57,6 +57,20 @@ ConditionTest >> testImplies [
 ]
 
 { #category : #tests }
+ConditionTest >> testLogicalEquals [
+	| isPositive isOdd doesPositiveEqualOdd |
+	
+	isPositive := [ :x | x > 0 ] asCondition.
+	isOdd := [ :x | x % 2 = 1 ] asCondition.
+	doesPositiveEqualOdd := isPositive logicalEquals: isOdd.
+	
+	self assert: (doesPositiveEqualOdd value: -2).
+	self deny: (doesPositiveEqualOdd value: -1).
+	self assert: (doesPositiveEqualOdd value: 1).
+	self deny: (doesPositiveEqualOdd value: 2).
+]
+
+{ #category : #tests }
 ConditionTest >> testNot [
 	| isPositive isNotPositive |
 	

@@ -41,6 +41,11 @@ Condition >> initializeBlock: aOneArgumentBlock [
 ]
 
 { #category : #enumerating }
+Condition >> logicalEquals: anotherCondition [
+	^ [ :anObject | (self value: anObject) eqv: ( anotherCondition value: anObject ) ] asCondition.
+]
+
+{ #category : #enumerating }
 Condition >> not [
 	^ [ :anObject | (self value: anObject) not ] asCondition.
 ]
