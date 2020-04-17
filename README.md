@@ -31,3 +31,27 @@ spec
 If you are new to baselines and Metacello, check out the [Baselines](https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Baselines.md) tutorial on Pharo Wiki.
 
 ## How to use it?
+
+Conditions can be defined using block closures:
+
+```Smalltalk
+isPositive := [ :x | x > 0 ] asCondition.
+isOdd := [ :x | x % 2 = 1 ] asCondition.
+isTestClass := [ :aClass | aClass inheritsFrom: TestCase ] asCondition.
+isEmptyClass := [ :aClass | aClass methods isEmpty ] asCondition.
+```
+Conditions can be evaluated as normal blocks. They are expected to return boolean values:
+
+```Smalltalk
+isOdd value: 2. "false"
+isTestClass value: ConditionTest. "true"
+```
+
+Conditions can be manipulated and combined using all basic operations of boolean algebra: AND, OR, NOT, XOR, IMPLIES, and EQUALS:
+
+```Smalltalk
+isPositiveOrOdd := isPositive or: isOdd.
+isEmptyTestClass := isTestClass and: isEmptyClass.
+
+alwaysTrue := (isOdd not or: isPositive) logicalEquals: (isOdd implies: isPositive).
+```
