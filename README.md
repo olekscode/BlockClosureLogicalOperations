@@ -1,7 +1,7 @@
 # Condition
 
 [![Build Status](https://travis-ci.org/olekscode/Condition.svg?branch=master)](https://travis-ci.org/olekscode/Condition)
-[![Build status](https://ci.appveyor.com/api/projects/status/r25rfpbcq9xin235?svg=true)](https://ci.appveyor.com/project/olekscode/condition)
+[![Build status](https://ci.appveyor.com/api/projects/status/kyqg5lvs7rudxxps?svg=true)](https://ci.appveyor.com/project/olekscode/condition)
 [![Coverage Status](https://coveralls.io/repos/github/olekscode/Condition/badge.svg?branch=master)](https://coveralls.io/github/olekscode/Condition?branch=master)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/olekscode/Condition/master/LICENSE)
 
