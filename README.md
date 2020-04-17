@@ -5,7 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/olekscode/Condition/badge.svg?branch=master)](https://coveralls.io/github/olekscode/Condition?branch=master)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/olekscode/Condition/master/LICENSE)
 
-Reification of a one-argument conditional block. Supports operations for combining multiple conditions 
+Reification of a one-argument conditional block. Supports operations for combining multiple conditions. Conditions can allow you to decompose complex logical queries into meaningful parts that can be reused.
 
 ## How to install it?
 
@@ -37,6 +37,7 @@ Conditions can be defined using block closures:
 ```Smalltalk
 isPositive := [ :x | x > 0 ] asCondition.
 isOdd := [ :x | x % 2 = 1 ] asCondition.
+
 isTestClass := [ :aClass | aClass inheritsFrom: TestCase ] asCondition.
 isEmptyClass := [ :aClass | aClass methods isEmpty ] asCondition.
 ```
@@ -54,4 +55,12 @@ isPositiveOrOdd := isPositive or: isOdd.
 isEmptyTestClass := isTestClass and: isEmptyClass.
 
 alwaysTrue := (isOdd not or: isPositive) logicalEquals: (isOdd implies: isPositive).
+```
+
+Any combination of conditions is also a condition:
+
+```Smalltalk
+isEmptyTestClass value: ConditionTest. "false"
+isPositiveOfOdd value: -1. "true".
+alwaysTrue value: (Random new next). "true"
 ```
