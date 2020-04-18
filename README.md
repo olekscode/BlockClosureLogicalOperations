@@ -5,7 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/olekscode/Condition/badge.svg?branch=master)](https://coveralls.io/github/olekscode/Condition?branch=master)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/olekscode/Condition/master/LICENSE)
 
-This package contains a simple extension of Pharo's `BlockClosure` with basic operations of Boolean algebra. It allows us to decompose complex logical queries into meaningful parts that can be reused.
+This repository contains a simple extension of Pharo's `BlockClosure` with basic operations of Boolean algebra. It allows us to decompose complex logical queries into meaningful parts that can be reused.
 
 ## How to install it?
 
