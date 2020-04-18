@@ -48,7 +48,7 @@ isOdd value: 2. "false"
 isTestClass value: ConditionTest. "true"
 ```
 
-We can manipulat and combine those blocks using all basic operations of boolean algebra: AND, OR, NOT, XOR, IMPLIES, and EQUALS:
+We can manipulate and combine those blocks using all basic operations of boolean algebra: AND, OR, NOT, XOR, IMPLIES, and EQUALS:
 
 ```Smalltalk
 isPositiveOrOdd := isPositive or: isOdd.
