@@ -1,9 +1,9 @@
 # Logical Operations on Block Closures
 
-[![Build Status](https://travis-ci.org/olekscode/Condition.svg?branch=master)](https://travis-ci.org/olekscode/Condition)
-[![Build status](https://ci.appveyor.com/api/projects/status/kyqg5lvs7rudxxps?svg=true)](https://ci.appveyor.com/project/olekscode/condition)
-[![Coverage Status](https://coveralls.io/repos/github/olekscode/Condition/badge.svg?branch=master)](https://coveralls.io/github/olekscode/Condition?branch=master)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/olekscode/Condition/master/LICENSE)
+[![Build Status](https://travis-ci.org/olekscode/BlockClosureLogicalOperations.svg?branch=master)](https://travis-ci.org/olekscode/BlockClosureLogicalOperations)
+[![Build status](https://ci.appveyor.com/api/projects/status/kyqg5lvs7rudxxps?svg=true)](https://ci.appveyor.com/project/olekscode/blockclosurelogicaloperations)
+[![Coverage Status](https://coveralls.io/repos/github/olekscode/BlockClosureLogicalOperations/badge.svg?branch=master)](https://coveralls.io/github/olekscode/BlockClosureLogicalOperations?branch=master)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/olekscode/BlockClosureLogicalOperations/master/LICENSE)
 
 This repository contains a simple extension of Pharo's `BlockClosure` with basic operations of Boolean algebra. It allows us to decompose complex logical queries into meaningful parts that can be reused.
 
@@ -38,8 +38,8 @@ Let's define several logical blocks closures:
 isPositive := [ :x | x > 0 ].
 isOdd := [ :x | x % 2 = 1 ].
 
-isTestClass := [ :aClass | aClass inheritsFrom: TestCase ] asCondition.
-isEmptyClass := [ :aClass | aClass methods isEmpty ] asCondition.
+isTestClass := [ :aClass | aClass inheritsFrom: TestCase ].
+isEmptyClass := [ :aClass | aClass methods isEmpty ].
 ```
 They evaluate to Boolean values:
 
