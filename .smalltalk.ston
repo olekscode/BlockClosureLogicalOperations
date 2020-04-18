@@ -1,14 +1,14 @@
 SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
-      #baseline : 'Condition',
+      #baseline : 'BlockClosureLogicalOperations',
       #directory : 'src',
       #platforms : [ #pharo ]
     }
   ],
   #testing : {
     #coverage : {
-      #packages : [ 'Condition*' ]
+      #packages : [ 'BlockClosureLogicalOperations*' ]
     }
   }
 }
