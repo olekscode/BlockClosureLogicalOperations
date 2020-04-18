@@ -1,15 +1,15 @@
 Class {
-	#name : #ConditionTest,
+	#name : #BlockClosureLogicalOperationsTest,
 	#superclass : #TestCase,
-	#category : #'Condition-Tests'
+	#category : #'BlockClosureLogicalOperations-Tests'
 }
 
 { #category : #tests }
-ConditionTest >> testAnd [
+BlockClosureLogicalOperationsTest >> testAnd [
 	| isPositive isOdd isPositiveOdd |
 	
-	isPositive := [ :x | x > 0 ] asCondition.
-	isOdd := [ :x | x % 2 = 1 ] asCondition.
+	isPositive := [ :x | x > 0 ].
+	isOdd := [ :x | x % 2 = 1 ].
 	isPositiveOdd := isPositive and: isOdd.
 	
 	self deny: (isPositiveOdd value: -2).
@@ -18,36 +18,12 @@ ConditionTest >> testAnd [
 	self deny: (isPositiveOdd value: 2).
 ]
 
-{ #category : #testing }
-ConditionTest >> testCanConvertOneArgumentBlockToCondition [
-	| block isPositive |
-	block := [ :x | x > 0 ].
-	isPositive := block asCondition.
-	
-	self assert: isPositive class equals: Condition.
-	self assert: isPositive asBlock equals: block. 
-]
-
-{ #category : #testing }
-ConditionTest >> testCanNotConvertBlockWithoutArgumentsToCondition [
-	| block |
-	block := [ true ].
-	self should: [ block asCondition ] raise: Error.
-]
-
-{ #category : #testing }
-ConditionTest >> testCanNotConvertTwoArgumentBlockToCondition [
-	| block |
-	block := [ :a :b | a > b ].
-	self should: [ block asCondition ] raise: Error.
-]
-
 { #category : #tests }
-ConditionTest >> testImplies [
+BlockClosureLogicalOperationsTest >> testImplies [
 	| isPositive isOdd doesPositiveImplyOdd |
 	
-	isPositive := [ :x | x > 0 ] asCondition.
-	isOdd := [ :x | x % 2 = 1 ] asCondition.
+	isPositive := [ :x | x > 0 ].
+	isOdd := [ :x | x % 2 = 1 ].
 	doesPositiveImplyOdd := isPositive implies: isOdd.
 	
 	self assert: (doesPositiveImplyOdd value: -2).
@@ -57,11 +33,11 @@ ConditionTest >> testImplies [
 ]
 
 { #category : #tests }
-ConditionTest >> testLogicalEquals [
+BlockClosureLogicalOperationsTest >> testLogicalEquals [
 	| isPositive isOdd doesPositiveEqualOdd |
 	
-	isPositive := [ :x | x > 0 ] asCondition.
-	isOdd := [ :x | x % 2 = 1 ] asCondition.
+	isPositive := [ :x | x > 0 ].
+	isOdd := [ :x | x % 2 = 1 ].
 	doesPositiveEqualOdd := isPositive logicalEquals: isOdd.
 	
 	self assert: (doesPositiveEqualOdd value: -2).
@@ -71,10 +47,10 @@ ConditionTest >> testLogicalEquals [
 ]
 
 { #category : #tests }
-ConditionTest >> testNot [
+BlockClosureLogicalOperationsTest >> testNot [
 	| isPositive isNotPositive |
 	
-	isPositive := [ :x | x > 0 ] asCondition.
+	isPositive := [ :x | x > 0 ].
 	isNotPositive := isPositive not.
 	
 	self assert: (isNotPositive value: -2).
@@ -84,11 +60,11 @@ ConditionTest >> testNot [
 ]
 
 { #category : #tests }
-ConditionTest >> testOr [
+BlockClosureLogicalOperationsTest >> testOr [
 	| isPositive isOdd isPositiveOrOdd |
 	
-	isPositive := [ :x | x > 0 ] asCondition.
-	isOdd := [ :x | x % 2 = 1 ] asCondition.
+	isPositive := [ :x | x > 0 ].
+	isOdd := [ :x | x % 2 = 1 ].
 	isPositiveOrOdd := isPositive or: isOdd.
 	
 	self deny: (isPositiveOrOdd value: -2).
@@ -98,22 +74,11 @@ ConditionTest >> testOr [
 ]
 
 { #category : #tests }
-ConditionTest >> testValue [
-	| isPositive |
-	isPositive := [ :x | x > 0 ] asCondition.
-	
-	self deny: (isPositive value: -2).
-	self deny: (isPositive value: -1).
-	self assert: (isPositive value: 1).
-	self assert: (isPositive value: 2).
-]
-
-{ #category : #tests }
-ConditionTest >> testXor [
+BlockClosureLogicalOperationsTest >> testXor [
 	| isPositive isOdd isPositiveXorOdd |
 	
-	isPositive := [ :x | x > 0 ] asCondition.
-	isOdd := [ :x | x % 2 = 1 ] asCondition.
+	isPositive := [ :x | x > 0 ].
+	isOdd := [ :x | x % 2 = 1 ].
 	isPositiveXorOdd := isPositive xor: isOdd.
 	
 	self deny: (isPositiveXorOdd value: -2).
