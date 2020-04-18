@@ -1,7 +1,7 @@
 # Logical Operations on Block Closures
 
 [![Build Status](https://travis-ci.org/olekscode/BlockClosureLogicalOperations.svg?branch=master)](https://travis-ci.org/olekscode/BlockClosureLogicalOperations)
-[![Build status](https://ci.appveyor.com/api/projects/status/kyqg5lvs7rudxxps?svg=true)](https://ci.appveyor.com/project/olekscode/blockclosurelogicaloperations)
+[![Build status](https://ci.appveyor.com/api/projects/status/6yqunglsbmsp18a1?svg=true)](https://ci.appveyor.com/project/olekscode/blockclosurelogicaloperations)
 [![Coverage Status](https://coveralls.io/repos/github/olekscode/BlockClosureLogicalOperations/badge.svg?branch=master)](https://coveralls.io/github/olekscode/BlockClosureLogicalOperations?branch=master)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/olekscode/BlockClosureLogicalOperations/master/LICENSE)
 
